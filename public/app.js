@@ -13,7 +13,7 @@ class App extends Component {
     this.state = {
       inputValue:'',
       data:[],
-      dataType:'function=TIME_SERIES_DAILY',
+      dataType:'function=TIME_SERIES_INTRADAY&interval=1min',
       OHLC:'openData'
     }
   }
