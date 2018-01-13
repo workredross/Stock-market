@@ -20,10 +20,10 @@ class Display extends Component {
         return (
             <div className = "row">
                 <select className="col-md-2" name="school" ref = 'drop' onChange = {this.handleDrop.bind(this)}>
-                    <option value="function=TIME_SERIES_INTRADAY&interval=1min">1min</option>
+                    <option value="function=TIME_SERIES_INTRADAY&interval=1min" selected>1min</option>
                     <option value="function=TIME_SERIES_INTRADAY&interval=5min">5min</option>
                     <option value="function=TIME_SERIES_INTRADAY&interval=15min">15min</option>
-                    <option  value="function=TIME_SERIES_DAILY" selected>Daily</option>
+                    <option  value="function=TIME_SERIES_DAILY" >Daily</option>
                     <option value="function=TIME_SERIES_WEEKLY">Weakly</option>
                     <option value="function=TIME_SERIES_MONTHLY">Monthly</option>   
                 </select>
