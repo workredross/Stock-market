@@ -1,11 +1,20 @@
 var express = require('express');
 
 var app = express();
+const PORT = process.env.PORT || 3000;
+
+//Heroku app
+ app.use(function (req, res, next){
+   if (req.headers['x-forwarded-proto'] === 'https') {
+     next();
+   } else {
+     res.redirect('http://' + req.hostname + req.url);
+   }
+ });
 
 app.use(express.static('public'));
 
-app.listen(3001,function () {
-  console.log('Server up on port 3001');
-})
-//sudo netstat -lnp
-//sudo kill sudo lsof -t -i:9001`
+app.listen(PORT, function () {
+  console.log('Express server is up on port ' + PORT);
+});
+
