@@ -23,7 +23,8 @@ var webpack = require('webpack');
         DisplayGraph: 'public/components/DisplayGraph.jsx',
         Input: 'public/components/Input.jsx',
         AlphaAPI:'public/API/AlphaAPI.jsx',
-        ChartData:'public/components/ChartData.jsx'
+        DisplaySearchText:'public/components/DisplaySearchText.jsx',
+        RecieveOHLC:'public/components/RecieveOHLC.jsx'
       },
       extension: ['', '.js', '.jsx']
   },

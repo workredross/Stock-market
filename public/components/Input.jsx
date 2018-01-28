@@ -35,7 +35,7 @@ class Display extends Component {
                 <option value="volumeData">VOLUME</option>   
             </select>
                 <form className="col-md-6" onSubmit={this.handleInput.bind(this)}>
-                    <input type="text" ref='input'/>
+                    <input type="text" ref='input' placeholder="stock symbol (aapl,googl)"/>
                     <button type="submit">ENTER</button>              
                 </form>
             </div>

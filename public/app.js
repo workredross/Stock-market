@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import AlphaAPI from 'AlphaAPI';
 import Input from 'Input';
 import DisplayGraph from 'DisplayGraph';
-import ChartData from 'ChartData';
+import DisplaySearchText from 'DisplaySearchText';
 
 class App extends Component {
   constructor(props){
@@ -22,6 +22,7 @@ class App extends Component {
       OHLC:OHLC,
     })
   }
+
   handleDrop(dataType){
     var {inputValue} = this.state;
     var that = this;
@@ -35,26 +36,28 @@ class App extends Component {
       alert(errorMessage);
     })
   }
+
   handleInput(inputValue){
     var {dataType} = this.state;
     var that = this;
     AlphaAPI.getStock(inputValue,dataType).then(function (data) {
       that.setState({
-          inputValue:inputValue,
-          data:data
-        });
+        inputValue:inputValue,
+        data:data
+      });
     },
     function (errorMessage) {
       alert(errorMessage);
     }) 
   }
+
   render() {
-    console.log(this.state.OHLC);
     
     return (
       <div>
         <Input handleInput = {this.handleInput.bind(this)} handleOHLC = {this.handleOHLC.bind(this)} handleDrop = {this.handleDrop.bind(this)} />
         <DisplayGraph data = {this.state.data} name = {this.state.inputValue} OHLC={this.state.OHLC}/>
+        <DisplaySearchText/>
       </div>
     );
   }
